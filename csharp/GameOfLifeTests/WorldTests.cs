@@ -25,13 +25,33 @@ namespace GameOfLifeTests
         }
 
         [TestMethod]
-        public void SettingArrayIndices()
+        public void CheckTotalSpaces()
         {
             //arrange
             World newWorld = new World(8);
 
             //assert
             Assert.AreEqual(64, newWorld.spaces.Length);
+        }
+
+        [TestMethod]
+        public void CheckFirstIndex()
+        {
+            //arrange
+            World newWorld = new World(8);
+
+            //assert
+            Assert.AreEqual(0, newWorld.spaces[0, 0]);
+        }
+
+        [TestMethod]
+        public void CheckLastIndex()
+        {
+            //arrange
+            World newWorld = new World(8);
+
+            //assert
+            Assert.AreEqual(0, newWorld.spaces[7, 7]);
         }
     }
 }
