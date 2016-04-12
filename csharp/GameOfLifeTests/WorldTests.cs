@@ -5,7 +5,7 @@ using GameOfLife;
 namespace GameOfLifeTests
 {
     [TestClass]
-    public class UnitTest1
+    public class WorldTests
     {
         [TestMethod]
         public void NotNull()
@@ -30,12 +30,8 @@ namespace GameOfLifeTests
             //arrange
             World newWorld = new World(8);
 
-            //act
-            newWorld.spaces[0,0] = ;
-            int[,] expected = new int[,] { {0, 0}, { 0, 0 }, { 2, 2 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 } };
-
             //assert
-            Assert.AreEqual(expected, newWorld);
+            Assert.AreEqual(64, newWorld.spaces.Length);
         }
     }
 }

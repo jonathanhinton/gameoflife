@@ -9,6 +9,7 @@ namespace GameOfLife
     public class World
     {
         public int[,] spaces{ get; set; }
+        public int[,] potentialSpaces { get; set; }
 
         public World(int size)
         {
@@ -17,6 +18,7 @@ namespace GameOfLife
                 throw new ArgumentException();
             }
             spaces = new int[size, size];
+            potentialSpaces = new int[size, size];
         }
     }
 }
