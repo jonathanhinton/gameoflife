@@ -17,5 +17,25 @@ namespace GameOfLife
             zeroDay = true;
         }
 
+        public void InitialSetup(World newWorld)
+        {
+            //code that implements the rules and the world goes here
+        }
+
+        public int neighborCounter(int row, int col, World world)
+        {
+            //set up counter to count neighbors
+            int counter = 0;
+
+            //setup bools to check neighbooring spaces
+            bool top = false;
+            bool right = false;
+            bool bottom = false;
+            bool left = false;
+
+
+
+            return counter;
+        }
     }
 }
