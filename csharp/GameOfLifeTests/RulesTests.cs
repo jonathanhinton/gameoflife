@@ -8,8 +8,10 @@ namespace GameOfLifeTests
     public class RulesTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void RulesAreNotNull()
         {
+            Rules rules = new Rules();
+            Assert.IsNotNull(rules);
         }
     }
 }
