@@ -16,5 +16,6 @@ namespace GameOfLife
             days = 0;
             zeroDay = true;
         }
+
     }
 }

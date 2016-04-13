@@ -13,5 +13,14 @@ namespace GameOfLifeTests
             Rules rules = new Rules();
             Assert.IsNotNull(rules);
         }
+
+        [TestMethod]
+        public void InitialGameBoardSetup()
+        {
+            World newWorld = new World(8);
+            Rules rules = new Rules();
+
+            
+        }
     }
 }
