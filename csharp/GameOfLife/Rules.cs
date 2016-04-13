@@ -10,5 +10,11 @@ namespace GameOfLife
     {
         public int days { get; set; }
         public bool zeroDay { get; set; }
+
+        public Rules()
+        {
+            days = 0;
+            zeroDay = true;
+        }
     }
 }
