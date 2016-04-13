@@ -8,6 +8,7 @@ namespace GameOfLife
 {
     public class Rules
     {
-
+        public int days { get; set; }
+        public bool zeroDay { get; set; }
     }
 }
