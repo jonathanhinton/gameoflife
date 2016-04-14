@@ -19,7 +19,17 @@ namespace GameOfLife
 
         public void InitialSetup(World newWorld)
         {
-            //code that implements the rules and the world goes here
+            zeroDay = false;
+            for (int row = 0; row < newWorld.spaces.GetLength(0); row++)
+            {
+                for (int col = 0; col < newWorld.spaces.GetLength(1); col++)
+                {
+                    int neighbors = neighborCounter(row, col, newWorld);
+                    PopulatePotentialWorld(row, col, neighbors, newWorld);
+                }
+            }
+            newWorld.spaces = (int[,])newWorld.potentialSpaces.Clone();
+            Array.Clear(newWorld.potentialSpaces, 0, newWorld.potentialSpaces.Length); 
         }
 
         public int neighborCounter(int row, int col, World world)
@@ -94,6 +104,34 @@ namespace GameOfLife
             }
 
             return counter;
+        }
+
+        public void PopulatePotentialWorld(int row, int col, int neighbors, World world)
+        {
+            if (world.spaces[row, col] == 1)
+            {
+                if (neighbors < 2)
+                {
+                    world.potentialSpaces[row, col] = 0;
+                }
+
+                if (neighbors == 2 || neighbors == 3)
+                {
+                    world.potentialSpaces[row, col] = 1;
+                }
+
+                if (neighbors > 3)
+                {
+                    world.potentialSpaces[row, col] = 0;
+                }
+            }
+            else
+            {
+                if (neighbors == 3)
+                {
+                    world.potentialSpaces[row, col] = 1;
+                }
+            }
         }
     }
 }
