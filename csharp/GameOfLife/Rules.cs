@@ -33,6 +33,11 @@ namespace GameOfLife
             bool bottom = false;
             bool left = false;
 
+            //check for cells on the boundary of 2d array
+            if(row == 0) { top = true; }
+            if(col == 0) { left = true; }
+            if(row == Math.Sqrt(world.spaces.Length)-1) { bottom = true; }
+            if(col == Math.Sqrt(world.spaces.Length)-1) { right = true; }
 
 
             return counter;
