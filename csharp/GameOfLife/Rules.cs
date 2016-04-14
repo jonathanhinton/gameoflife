@@ -34,11 +34,64 @@ namespace GameOfLife
             bool left = false;
 
             //check for cells on the boundary of 2d array
-            if(row == 0) { top = true; }
-            if(col == 0) { left = true; }
-            if(row == Math.Sqrt(world.spaces.Length)-1) { bottom = true; }
-            if(col == Math.Sqrt(world.spaces.Length)-1) { right = true; }
+            if (row == 0) { top = true; }
+            if (col == 0) { left = true; }
+            if (row == Math.Sqrt(world.spaces.Length)-1) { bottom = true; }
+            if (col == Math.Sqrt(world.spaces.Length)-1) { right = true; }
+            
+            if (!top)
+            {
+                if (world.spaces[row - 1, col] == 1)
+                {
+                    counter++;
+                }
+            }
 
+            if (!top || !right)
+            {
+                if (world.spaces[row - 1, col + 1] == 1)
+                {
+                    counter++;
+                }
+            }
+
+            if (!right)
+                if (world.spaces[row, col + 1] == 1)
+                {
+                    counter++;
+                }
+
+            if (!right || !bottom)
+            {
+                if (world.spaces[row + 1, col + 1] == 1)
+                {
+                    counter++;
+                }
+            }
+
+            if (!bottom)
+            {
+                if (world.spaces[row + 1, col] == 1)
+                {
+                    counter++;
+                }
+            }
+
+            if (!bottom || !left)
+            {
+                if (world.spaces[row + 1, col - 1] == 1)
+                {
+                    counter++;
+                }
+            }
+
+            if (!left)
+            {
+                if (world.spaces[row, col - 1] == 1)
+                {
+                    counter++;
+                }
+            }
 
             return counter;
         }
