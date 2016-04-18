@@ -35,6 +35,45 @@ namespace GameOfLife
                     rules.InitialSetup(blockWorld);
                     break;
 
+                case 2:
+                    World honeyCombWorld = multiverse.honeycomb(newWorld);
+                    rules.DrawWorld(honeyCombWorld);
+                    Console.WriteLine(keyMessage);
+                    Console.ReadKey();
+                    rules.InitialSetup(honeyCombWorld);
+                    break;
+
+                case 3:
+                    World threeCellOscilatorWorld = multiverse.threeCellOscilator(newWorld);
+                    rules.DrawWorld(threeCellOscilatorWorld);
+                    Console.WriteLine(keyMessage);
+                    Console.ReadKey();
+                    rules.InitialSetup(threeCellOscilatorWorld);
+                    break;
+
+                case 4:
+                    World toadWorld = multiverse.Toad(newWorld);
+                    rules.DrawWorld(toadWorld);
+                    Console.WriteLine(keyMessage);
+                    Console.ReadKey();
+                    rules.InitialSetup(toadWorld);
+                    break;
+
+                case 5:
+                    World randomWorld = multiverse.Random(newWorld);
+                    rules.DrawWorld(randomWorld);
+                    Console.WriteLine(keyMessage);
+                    Console.ReadKey();
+                    rules.InitialSetup(randomWorld);
+                    break;
+
+                default:
+                    World randomDefault = multiverse.Random(newWorld);
+                    rules.DrawWorld(randomDefault);
+                    Console.WriteLine(keyMessage);
+                    Console.ReadKey();
+                    rules.InitialSetup(randomDefault);
+                    break;
             }
 
 

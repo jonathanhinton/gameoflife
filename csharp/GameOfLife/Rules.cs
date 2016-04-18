@@ -20,17 +20,20 @@ namespace GameOfLife
         public void InitialSetup(World newWorld)
         {
             zeroDay = false;
-            for (int row = 0; row < newWorld.spaces.GetLength(0); row++)
+            while (true)
             {
-                for (int col = 0; col < newWorld.spaces.GetLength(1); col++)
+                for (int row = 0; row < newWorld.spaces.GetLength(0); row++)
                 {
-                    int neighbors = neighborCounter(row, col, newWorld);
-                    PopulatePotentialWorld(row, col, neighbors, newWorld);
+                    for (int col = 0; col < newWorld.spaces.GetLength(1); col++)
+                    {
+                        int neighbors = neighborCounter(row, col, newWorld);
+                        PopulatePotentialWorld(row, col, neighbors, newWorld);
+                    }
                 }
+                newWorld.spaces = (int[,])newWorld.potentialSpaces.Clone();
+                Array.Clear(newWorld.potentialSpaces, 0, newWorld.potentialSpaces.Length);
+                DrawWorld(newWorld);
             }
-            newWorld.spaces = (int[,])newWorld.potentialSpaces.Clone();
-            Array.Clear(newWorld.potentialSpaces, 0, newWorld.potentialSpaces.Length);
-            DrawWorld(newWorld);
         }
 
         public int neighborCounter(int row, int col, World world)
@@ -58,7 +61,7 @@ namespace GameOfLife
                 }
             }
 
-            if (!top || !right)
+            if (!(top || right))
             {
                 if (world.spaces[row - 1, col + 1] == 1)
                 {
@@ -72,7 +75,7 @@ namespace GameOfLife
                     counter++;
                 }
 
-            if (!right || !bottom)
+            if (!(right || bottom))
             {
                 if (world.spaces[row + 1, col + 1] == 1)
                 {
@@ -88,7 +91,7 @@ namespace GameOfLife
                 }
             }
 
-            if (!bottom || !left)
+            if (!(bottom || left))
             {
                 if (world.spaces[row + 1, col - 1] == 1)
                 {
@@ -153,7 +156,7 @@ namespace GameOfLife
                 {
                     if (world.spaces[row, col] == 1)
                     {
-                        consoleWorld.Append("@");
+                        consoleWorld.Append("*");
                     }
                     else
                     {
