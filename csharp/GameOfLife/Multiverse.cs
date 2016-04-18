@@ -32,5 +32,16 @@ namespace GameOfLife
 
             return currentWorld;
         }
+
+        public World threeCellOscilator(World currentWorld)
+        {
+            int col = 3;
+            int row = 3;
+            currentWorld.spaces[col, row] = 1;
+            currentWorld.spaces[col - 1, row] = 1;
+            currentWorld.spaces[col + 1, row + 3] = 1;
+
+            return currentWorld;
+        }
     }
 }
