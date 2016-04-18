@@ -10,6 +10,7 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
+
             World newWorld = new World(30);
             Multiverse multiverse = new Multiverse();
             Rules rules = new Rules();
@@ -24,6 +25,17 @@ namespace GameOfLife
             int x = int.Parse(Console.ReadLine());
             string keyMessage = "Press a key to start your game";
 
+            switch(x)
+            {
+                case 1:
+                    World blockWorld = multiverse.block(newWorld);
+                    rules.DrawWorld(blockWorld);
+                    Console.WriteLine(keyMessage);
+                    Console.ReadKey();
+                    rules.InitialSetup(blockWorld);
+                    break;
+
+            }
 
 
 
