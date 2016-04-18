@@ -29,7 +29,8 @@ namespace GameOfLife
                 }
             }
             newWorld.spaces = (int[,])newWorld.potentialSpaces.Clone();
-            Array.Clear(newWorld.potentialSpaces, 0, newWorld.potentialSpaces.Length); 
+            Array.Clear(newWorld.potentialSpaces, 0, newWorld.potentialSpaces.Length);
+            DrawWorld(newWorld);
         }
 
         public int neighborCounter(int row, int col, World world)
