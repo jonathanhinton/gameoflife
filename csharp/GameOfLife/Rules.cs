@@ -133,5 +133,39 @@ namespace GameOfLife
                 }
             }
         }
+
+        public void DrawWorld(World world)
+        {
+            Console.Clear();
+            StringBuilder consoleWorld = new StringBuilder();
+
+            if (!zeroDay)
+            {
+                days++;
+            }
+
+            consoleWorld.Append("Days" + days + "\r\n");
+
+            for (int row = 0; row < world.spaces.GetLength(0); row++)
+            {
+                for (int col = 0; col < world.spaces.GetLength(1); col++)
+                {
+                    if (world.spaces[row, col] == 1)
+                    {
+                        consoleWorld.Append("@");
+                    }
+                    else
+                    {
+                        consoleWorld.Append(" ");
+                    }
+                }
+
+                consoleWorld.Append("\r\n");
+            }
+
+            Console.WriteLine(consoleWorld);
+
+            System.Threading.Thread.Sleep(500);
+        }
     }
 }
