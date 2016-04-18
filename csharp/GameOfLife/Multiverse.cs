@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameOfLife
 {
-    class Multiverse
+    public class Multiverse
     {
         public World block(World currentWorld)
         {
@@ -20,7 +20,7 @@ namespace GameOfLife
             return currentWorld;
         }
 
-        public World honeycomb(World currentWorld)
+        public World honeyComb(World currentWorld)
         {
             int row = 5;
             int col = 5;
@@ -33,7 +33,7 @@ namespace GameOfLife
             return currentWorld;
         }
 
-        public World threeCellOscilator(World currentWorld)
+        public World threeCellOscillator(World currentWorld)
         {
             int row = 3;
             int col = 3;

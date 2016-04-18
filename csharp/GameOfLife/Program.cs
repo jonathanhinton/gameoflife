@@ -36,7 +36,7 @@ namespace GameOfLife
                     break;
 
                 case 2:
-                    World honeyCombWorld = multiverse.honeycomb(newWorld);
+                    World honeyCombWorld = multiverse.honeyComb(newWorld);
                     rules.DrawWorld(honeyCombWorld);
                     Console.WriteLine(keyMessage);
                     Console.ReadKey();
@@ -44,11 +44,11 @@ namespace GameOfLife
                     break;
 
                 case 3:
-                    World threeCellOscilatorWorld = multiverse.threeCellOscilator(newWorld);
-                    rules.DrawWorld(threeCellOscilatorWorld);
+                    World threeCellOscillatorWorld = multiverse.threeCellOscillator(newWorld);
+                    rules.DrawWorld(threeCellOscillatorWorld);
                     Console.WriteLine(keyMessage);
                     Console.ReadKey();
-                    rules.InitialSetup(threeCellOscilatorWorld);
+                    rules.InitialSetup(threeCellOscillatorWorld);
                     break;
 
                 case 4:
