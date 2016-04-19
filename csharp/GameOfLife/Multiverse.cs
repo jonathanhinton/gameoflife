@@ -38,8 +38,8 @@ namespace GameOfLife
             int row = 3;
             int col = 3;
             currentWorld.spaces[row, col] = 1;
-            currentWorld.spaces[row - 1, col] = 1;
-            currentWorld.spaces[row + 1, col + 3] = 1;
+            currentWorld.spaces[row, col - 1] = 1;
+            currentWorld.spaces[row, col + 1] = 1;
 
             return currentWorld;
         }

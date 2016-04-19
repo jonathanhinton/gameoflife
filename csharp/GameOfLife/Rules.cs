@@ -169,7 +169,7 @@ namespace GameOfLife
 
             Console.WriteLine(consoleWorld);
 
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(150);
         }
     }
 }
