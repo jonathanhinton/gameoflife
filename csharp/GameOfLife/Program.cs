@@ -11,6 +11,8 @@ namespace GameOfLife
         static void Main(string[] args)
         {
 
+            bool goBack = true;
+
             World newWorld = new World(30);
             Multiverse multiverse = new Multiverse();
             Rules rules = new Rules();
@@ -21,11 +23,14 @@ namespace GameOfLife
             Console.WriteLine("3 - Three Cell Oscilator");
             Console.WriteLine("4 - Toad");
             Console.WriteLine("5 - Random");
+            Console.WriteLine("q - return to this menu");
+
+
 
             int x = int.Parse(Console.ReadLine());
             string keyMessage = "Press a key to start your game";
 
-            switch(x)
+            switch (x)
             {
                 case 1:
                     World blockWorld = multiverse.block(newWorld);
@@ -33,6 +38,11 @@ namespace GameOfLife
                     Console.WriteLine(keyMessage);
                     Console.ReadKey();
                     rules.InitialSetup(blockWorld);
+                    Console.ReadKey();
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
+                    {
+                        goBack = false;
+                    }
                     break;
 
                 case 2:
@@ -76,7 +86,7 @@ namespace GameOfLife
                     break;
             }
 
-
+            
 
         }
     }
